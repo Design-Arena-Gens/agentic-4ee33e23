@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --horror-dark: #0a0a0a;
+  --horror-blood: #8B0000;
+  --horror-mist: #2d2d2d;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+  min-height: 100vh;
+  color: #e5e5e5;
+}
+
+.horror-glow {
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.5), 0 0 20px rgba(139, 0, 0, 0.3);
+}
+
+.card-horror {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(139, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.card-horror:hover {
+  border-color: rgba(139, 0, 0, 0.6);
+  box-shadow: 0 8px 30px rgba(139, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.blood-line {
+  background: linear-gradient(90deg, transparent 0%, #8B0000 50%, transparent 100%);
+  height: 1px;
+}
+
+.keyword-tag {
+  @apply px-3 py-1 rounded-full text-sm font-medium transition-all duration-200;
+  background: rgba(139, 0, 0, 0.2);
+  border: 1px solid rgba(139, 0, 0, 0.4);
+}
+
+.keyword-tag:hover {
+  background: rgba(139, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+.copy-btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  background: linear-gradient(145deg, #8B0000 0%, #5a0000 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copy-btn:hover {
+  background: linear-gradient(145deg, #a00000 0%, #6a0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+.flicker-text {
+  animation: flicker 4s infinite;
+}
+
+.scroll-fade {
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
